@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Список задач</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__head">
+      <h1>Список задач</h1>
+      <p class="app__sub" id="counter" aria-live="polite"></p>
+    </header>
+
+    <form class="add" id="add-form" autocomplete="off">
+      <input class="add__input" id="task-input" type="text" maxlength="200"
+             placeholder="Что нужно сделать?" aria-label="Новая задача">
+      <button class="btn btn--primary" type="submit">Добавить</button>
+    </form>
+    <p class="hint" id="hint" role="alert" hidden>Напиши, что нужно сделать</p>
+
+    <nav class="filters" aria-label="Фильтр задач">
+      <button class="filter is-active" data-filter="all">Все</button>
+      <button class="filter" data-filter="active">Активные</button>
+      <button class="filter" data-filter="done">Готовые</button>
+    </nav>
+
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden>Здесь пока пусто</p>
+
+    <footer class="app__foot">
+      <button class="btn btn--ghost" id="clear-done" type="button">Очистить выполненные</button>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
